@@ -13,3 +13,5 @@ gem 'bcrypt'
 gem 'tux'
 gem 'faker'
 
+
+gem "dotenv", "~> 2.7"
