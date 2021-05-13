@@ -15,3 +15,5 @@ gem 'faker'
 
 
 gem "dotenv", "~> 2.7"
+
+gem "sinatra-flash", "~> 0.3.0"
