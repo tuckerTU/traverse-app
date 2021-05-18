@@ -3,17 +3,18 @@
 <form action='/destinations' method='post'>
 
   <label for="city">City:</label><br>
-  <input type="text" id="city" name="city"><br>
+  <input type="text" id="city" name="destination[city]"><br>
   <label for="country">Country:</label><br>
-  <input type="text" id="country" name="country"><br>
+  <input type="text" id="country" name="destination[country]"><br>
   <label for="continent">Continent:</label><br>
-  <input type="text" id="continent" name="continent">
+  <input type="text" id="continent" name="destination[continent]">
 
   <p>Are you planning a future trip or showing off one from the past?</p>
   <input type="radio" id="visited" name="new" value="past">
   <label for="past">This is from the past, but mentally I am still there.</label><br>
   <input type="radio" id="visited" name="new" value="future">
   <label for="future">Future plans, baby. I don't look back because that's not where I'm going.</label><br>
-      
+
+  <input type="submit">    
 </form>
 
