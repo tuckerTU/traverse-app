@@ -1,13 +1,13 @@
-<h1> Add a new destination to your itenerary here!</h1>
+<h1> Edit <%= @destination.name %></h1>
 
-<form action='/destinations' method='post'>
+<form action='/destinations/<%= @destination.id %>' method='post'>
 
   <label for="city">City:</label><br>
-  <input type="text" id="city" name="destination[city]"><br>
+  <input type="text" id="city" name="destination[city]" value=<%= @destination.city %>><br>
   <label for="country">Country:</label><br>
-  <input type="text" id="country" name="destination[country]"><br>
+  <input type="text" id="country" name="destination[country]" value=<%= @destination.country %>><br>
   <label for="continent">Continent:</label><br>
-  <input type="text" id="continent" name="destination[continent]">
+  <input type="text" id="continent" name="destination[continent]" value=<%= @destination.continent %>>
 
   <p>Are you planning a future trip or showing off one from the past?</p>
   <input type="radio" id="past" name="new" value="true">
