@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect '/'
     else
-      flash[:errors] = users.errors.full_messages
+      flash[:errors] = user.errors.full_messages
       redirect '/users/new'
     end
   end
