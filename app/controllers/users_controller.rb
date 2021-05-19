@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     erb :'users/index'
   end
 
+  get '/profile' do
+    redirect '/users/#{current_user.id}'
+  end
+
   get '/users/new' do 
     erb :'users/new'
   end
@@ -16,8 +20,13 @@ class UsersController < ApplicationController
 
   post '/users' do 
     user = User.create(params)
-    session[:user_id] = user.id
-    redirect '/'
+    if user.valid?
+      session[:user_id] = user.id
+      redirect '/'
+    else
+      flash[:errors] = users.errors.full_messages
+      redirect '/users/new'
+    end
   end
 
 end

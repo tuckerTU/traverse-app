@@ -26,6 +26,15 @@
           <a href="/login">Log In</a>          
         <% end %>
       </nav>
+
+      <% if flash[:errors] %>
+        <ul class='errors'>
+          <% flash[:errors].each do |error| %>
+            <li><%=error%></li>
+          <% end %>
+        </ul>
+      <% end %>
+      
         <%= yield %>
 
       <footer class="branding">
