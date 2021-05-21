@@ -9,3 +9,4 @@ run ApplicationController
 use DestinationsController
 use UsersController
 use SessionsController
+#use UserDestinations

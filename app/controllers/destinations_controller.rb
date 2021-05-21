@@ -1,12 +1,18 @@
 class DestinationsController < ApplicationController
 
     get '/destinations/new' do
+        @destination = Destination.new
         erb :'destinations/new'
     end
 
     post '/destinations' do
       destination = current_user.destinations.create(params{:destination})
-      redirect "destinations/#{destination.id}"
+      if destination.valid
+        redirect "destinations/#{destination.id}"
+      else
+        flash[:errors] = destination.errors.full_messages
+        redirect '/destinations/new'
+      end
     end
 
     get '/destinations' do 

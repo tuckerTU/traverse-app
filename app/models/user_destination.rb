@@ -1,4 +1,4 @@
-class UsersDestinations < ActiveRecord::Base
+class UserDestination < ActiveRecord::Base
     belongs_to :user
     belongs_to :destination
 end 
