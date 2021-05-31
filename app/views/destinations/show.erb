@@ -2,7 +2,7 @@
 <p>Country: <%= @destination.country %></p>
 <p>Continent: <%= @destination.continent %></p>
 
-<a href='/destinations/<%= @destination.id %>/edit'>Edit <%= @destination.name %></a>
+<a href='/destinations/<%= @destination.id %>/edit'>Edit <%= @destination.city %></a>
 
 <form action='/destinations/<%= @destination.id %>' method ='post'>
     <input type='hidden' name='_method' value='delete'>

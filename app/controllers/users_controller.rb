@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   get '/profile' do
-    redirect '/users/#{current_user.id}'
+    redirect "/users/#{current_user.id}"
   end
 
   get '/users/new' do 

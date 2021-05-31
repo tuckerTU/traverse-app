@@ -1,13 +1,15 @@
 <h1><%= @user.username %></h1>
 
+<ul>
 <% if @user.destinations.any?%>
-<h3>Here are your destinations:</h3>
+<h2>Here are your destinations:</h2>
     <% @user.destinations.each do |destination| %>
         <a href='/destinations/<%= destination.id %>'><%=destination.city%>
     <% end %>
 <% else %>
-    <h1>There aren't any trips planned...</h1>
+    <h2>There aren't any trips planned...</h2>
     <% if @user == current_user %>
         <p><a href='/destinations/new'>Add your first destination!</a><p>
     <% end %>
 <% end %>
+</ul>

@@ -1,6 +1,6 @@
-<h1>Where are we going?</h1>
+<h1>Here's all the destinations on our users' minds!</h1>
 <ul>
 <% @destinations.each do |destination| %>
-    <li><a href='destinations/<%=destination.name%>'><%= destination.name %></a></li>
+    <li><a href='destinations/<%=destination.city%>'><%= destination.city %></a></li>
 <% end %>
 </ul>
