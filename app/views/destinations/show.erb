@@ -2,9 +2,11 @@
 <p>Country: <%= @destination.country %></p>
 <p>Continent: <%= @destination.continent %></p>
 
-<a href='/destinations/<%= @destination.id %>/edit'>Edit <%= @destination.city %></a>
+<% if @destination.users.include? current_user %>
+    <a href='/destinations/<%= @destination.id %>/edit'>Edit <%= @destination.city %></a>
 
-<form action='/destinations/<%= @destination.id %>' method ='post'>
-    <input type='hidden' name='_method' value='delete'>
-    <input type='submit' value='Remove this Destination'>
-</form>
+    <form action='/destinations/<%= @destination.id %>' method ='post'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Remove this Destination'>
+    </form>
+<% end %>
