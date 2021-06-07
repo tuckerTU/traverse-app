@@ -1,0 +1,1 @@
+Traverse is an app that helps users keep track of their favorite travel destinations, plan future trips & see what destinations are popular with fellow travelers. 
