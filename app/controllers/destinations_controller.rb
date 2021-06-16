@@ -22,31 +22,31 @@ class DestinationsController < ApplicationController
 
     get '/destinations/:id' do 
         if logged_in?
-        @destination = Destination.find(params[:id])
-        erb :'destinations/show'
+            @destination = Destination.find(params[:id])
+            erb :'destinations/show'
         end
     end
 
     get '/destinations/:id/edit' do 
         if logged_in?
-        @destination = Destination.find_by_id(params[:id])
-        erb :'destinations/edit'
+            @destination = Destination.find(params[:id])
+            erb :'/destinations/edit'
         end
     end
 
     patch '/destinations/:id' do 
         if logged_in?
-        destination = Destination.find(params{:id})
-        destination.update(params{:destination})
-        redirect '/destinations/#{destination.id}'
+            @destination = Destination.find_by_id(params[:id])
+            @destination.update(params[:destination])
+            redirect "/destinations/#{@destination.id}"
         end
     end
 
     delete '/destinations/:id' do
         if logged_in? 
-        destination = Destination.find(params[:id])
-        destination.destroy
-        redirect '/destinations'
+            destination = Destination.find_by_id(params[:id])
+            destination.destroy
+            redirect '/destinations'
         end
     end
 
