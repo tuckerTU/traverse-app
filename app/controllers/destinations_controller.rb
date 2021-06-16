@@ -29,7 +29,7 @@ class DestinationsController < ApplicationController
 
     get '/destinations/:id/edit' do 
         if logged_in?
-            @destination = Destination.find(params[:id])
+            @destination = Destination.find_by_id(params[:id])
             erb :'/destinations/edit'
         end
     end
@@ -44,7 +44,7 @@ class DestinationsController < ApplicationController
 
     delete '/destinations/:id' do
         if logged_in? 
-            destination = Destination.find_by_id(params[:id])
+            destination = Destination.find(params[:id])
             destination.destroy
             redirect '/destinations'
         end
