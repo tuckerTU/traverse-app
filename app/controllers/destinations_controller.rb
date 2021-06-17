@@ -28,9 +28,11 @@ class DestinationsController < ApplicationController
     end
 
     get '/destinations/:id/edit' do 
-        if logged_in?
-            @destination = Destination.find_by_id(params[:id])
+        @destination = Destination.find_by_id(params[:id])
+        if @destination.users.include?(current_user)
             erb :'/destinations/edit'
+        else
+            redirect "/destinations"
         end
     end
 
