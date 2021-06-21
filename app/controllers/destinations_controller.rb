@@ -7,7 +7,7 @@ class DestinationsController < ApplicationController
 
     post '/destinations' do
       destination = current_user.destinations.create(params[:destination])
-      if destination.valid?
+      if destination.valid? && !!params.blank?
         redirect "destinations/#{destination.id}"
       else
         flash[:errors] = destination.errors.full_messages
